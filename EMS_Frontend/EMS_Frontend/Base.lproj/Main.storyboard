@@ -44,7 +44,9 @@
                             <constraint firstItem="vDp-jH-xQd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="boN-lO-GzN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="EMS" id="6FJ-bm-hFc"/>
+                    <navigationItem key="navigationItem" title="EMS" id="6FJ-bm-hFc">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="Dam-ue-Yzw"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,8 +59,30 @@
                     <view key="view" contentMode="scaleToFill" id="0gp-7o-pkh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iKg-Di-RDg">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a6U-Iv-bwJ" id="lPw-zv-fbY"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GPR-DX-3Gd">
+                                <rect key="frame" x="0.0" y="159" width="393" height="609"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="DBL-5k-x9K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DBL-5k-x9K" firstAttribute="trailing" secondItem="GPR-DX-3Gd" secondAttribute="trailing" id="Ccu-Ve-jC8"/>
+                            <constraint firstItem="GPR-DX-3Gd" firstAttribute="top" secondItem="iKg-Di-RDg" secondAttribute="bottom" id="NYn-1T-EgX"/>
+                            <constraint firstAttribute="trailing" secondItem="iKg-Di-RDg" secondAttribute="trailing" id="OaB-S0-X4n"/>
+                            <constraint firstItem="iKg-Di-RDg" firstAttribute="leading" secondItem="DBL-5k-x9K" secondAttribute="leading" id="VAp-wq-TBJ"/>
+                            <constraint firstItem="DBL-5k-x9K" firstAttribute="bottom" secondItem="GPR-DX-3Gd" secondAttribute="bottom" constant="50" id="aYS-rw-4ak"/>
+                            <constraint firstItem="iKg-Di-RDg" firstAttribute="top" secondItem="DBL-5k-x9K" secondAttribute="top" id="bwF-TY-fNf"/>
+                            <constraint firstItem="GPR-DX-3Gd" firstAttribute="leading" secondItem="DBL-5k-x9K" secondAttribute="leading" id="ngv-9b-PVW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Employee Table" id="wmm-fR-RqV"/>
                 </viewController>
