@@ -15,6 +15,7 @@
 		ACE3C8A42A1E516E00C18409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE3C8A22A1E516E00C18409 /* LaunchScreen.storyboard */; };
 		ACE3C8AC2A1F2D3B00C18409 /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C8AB2A1F2D3A00C18409 /* EmployeeTableViewController.swift */; };
 		ACE3C8AE2A1F2DD800C18409 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C8AD2A1F2DD800C18409 /* EmployeeTableViewCell.swift */; };
+		ACE3C8B02A1F400900C18409 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C8AF2A1F400900C18409 /* EmployeeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		ACE3C8A52A1E516E00C18409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACE3C8AB2A1F2D3A00C18409 /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
 		ACE3C8AD2A1F2DD800C18409 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		ACE3C8AF2A1F400900C18409 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				ACE3C8A02A1E516E00C18409 /* Assets.xcassets */,
 				ACE3C8A22A1E516E00C18409 /* LaunchScreen.storyboard */,
 				ACE3C8A52A1E516E00C18409 /* Info.plist */,
+				ACE3C8AF2A1F400900C18409 /* EmployeeModel.swift */,
 			);
 			path = EMS_Frontend;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				ACE3C89C2A1E516E00C18409 /* ViewController.swift in Sources */,
 				ACE3C8AC2A1F2D3B00C18409 /* EmployeeTableViewController.swift in Sources */,
 				ACE3C8982A1E516E00C18409 /* AppDelegate.swift in Sources */,
+				ACE3C8B02A1F400900C18409 /* EmployeeModel.swift in Sources */,
 				ACE3C8AE2A1F2DD800C18409 /* EmployeeTableViewCell.swift in Sources */,
 				ACE3C89A2A1E516E00C18409 /* SceneDelegate.swift in Sources */,
 			);
