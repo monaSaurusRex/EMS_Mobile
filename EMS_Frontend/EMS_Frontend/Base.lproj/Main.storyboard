@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,7 +56,7 @@
         <!--Employee Table-->
         <scene sceneID="1GI-CS-2tv">
             <objects>
-                <viewController storyboardIdentifier="Employee Table" id="a6U-Iv-bwJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Employee Table" id="a6U-Iv-bwJ" customClass="EmployeeTableViewController" customModule="EMS_Frontend" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0gp-7o-pkh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,6 +71,63 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GPR-DX-3Gd">
                                 <rect key="frame" x="0.0" y="159" width="393" height="609"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="employee_cell" rowHeight="73" id="S0G-f4-R0X" customClass="EmployeeTableViewCell" customModule="EMS_Frontend" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S0G-f4-R0X" id="cdI-gS-PUX">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9CO-CB-BMn">
+                                                    <rect key="frame" x="10" y="4" width="40" height="65.666666666666671"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="CpQ-yd-p1B"/>
+                                                        <constraint firstAttribute="height" constant="40" id="ivl-pI-shF"/>
+                                                    </constraints>
+                                                    <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="default" variableValue="0.80000000000000004"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EmpNum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-RD-xrO">
+                                                    <rect key="frame" x="55" y="3" width="328" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LastName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMk-3i-El6">
+                                                    <rect key="frame" x="138" y="49" width="245" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="FirstName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbC-X7-zcq">
+                                                    <rect key="frame" x="55" y="49" width="78" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rMk-3i-El6" firstAttribute="leading" secondItem="fbC-X7-zcq" secondAttribute="trailing" constant="5" id="8bt-Pl-6iP"/>
+                                                <constraint firstAttribute="trailing" secondItem="mFH-RD-xrO" secondAttribute="trailing" constant="10" id="AnC-e0-3SN"/>
+                                                <constraint firstItem="fbC-X7-zcq" firstAttribute="bottom" secondItem="9CO-CB-BMn" secondAttribute="bottom" id="FA0-At-LCw"/>
+                                                <constraint firstItem="fbC-X7-zcq" firstAttribute="leading" secondItem="9CO-CB-BMn" secondAttribute="trailing" constant="5" id="FES-db-2Rr"/>
+                                                <constraint firstItem="9CO-CB-BMn" firstAttribute="top" secondItem="cdI-gS-PUX" secondAttribute="top" constant="3" id="MTh-Ty-V2X"/>
+                                                <constraint firstItem="mFH-RD-xrO" firstAttribute="top" secondItem="cdI-gS-PUX" secondAttribute="top" constant="3" id="Uqh-Nj-eLa"/>
+                                                <constraint firstItem="mFH-RD-xrO" firstAttribute="leading" secondItem="9CO-CB-BMn" secondAttribute="trailing" constant="5" id="WM9-mc-z5G"/>
+                                                <constraint firstAttribute="bottom" secondItem="9CO-CB-BMn" secondAttribute="bottom" constant="3" id="da0-Jg-Mwg"/>
+                                                <constraint firstItem="rMk-3i-El6" firstAttribute="centerY" secondItem="fbC-X7-zcq" secondAttribute="centerY" id="gk9-mx-WhA"/>
+                                                <constraint firstItem="9CO-CB-BMn" firstAttribute="leading" secondItem="cdI-gS-PUX" secondAttribute="leading" constant="10" id="nVD-3I-q3X"/>
+                                                <constraint firstAttribute="trailing" secondItem="rMk-3i-El6" secondAttribute="trailing" constant="10" id="rbr-bo-dGd"/>
+                                                <constraint firstItem="mFH-RD-xrO" firstAttribute="top" secondItem="9CO-CB-BMn" secondAttribute="top" id="v6N-3A-qCI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="empFirstName" destination="fbC-X7-zcq" id="BJo-R9-yNj"/>
+                                            <outlet property="empLastName" destination="rMk-3i-El6" id="dMX-h3-USY"/>
+                                            <outlet property="employeeNum" destination="mFH-RD-xrO" id="ciu-0Y-nwQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DBL-5k-x9K"/>
@@ -85,6 +143,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Employee Table" id="wmm-fR-RqV"/>
+                    <connections>
+                        <outlet property="employeeTV" destination="GPR-DX-3Gd" id="XAl-RW-qvX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPD-SC-h8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,6 +171,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
