@@ -11,8 +11,13 @@ class EmployeeTableViewController: UIViewController {
 
     @IBOutlet weak var employeeTV: UITableView!
     
+    var employeeData = ["John Doe", "Sally Parson", "Jane Doe"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        employeeTV.dataSource = self
+        employeeTV.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -28,4 +33,23 @@ class EmployeeTableViewController: UIViewController {
     }
     */
 
+}
+
+extension EmployeeTableViewController:UITableViewDataSource, UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = employeeTV.dequeueReusableCell(withIdentifier: "employeeCell", for: indexPath) as? EmployeeTableViewCell else {return UITableViewCell()}
+        
+        cell.employeeNum.text = "1"
+        cell.empFirstName.text = "John"
+        cell.empLastName.text = "Doe"
+        
+        
+        return cell
+    }
+    
 }
