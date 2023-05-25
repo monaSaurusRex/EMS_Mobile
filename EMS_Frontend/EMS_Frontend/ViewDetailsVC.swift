@@ -15,13 +15,18 @@ class ViewDetailsVC: UIViewController {
 	@IBOutlet weak var emailLabel: UILabel!
 	@IBOutlet weak var contactLabel: UILabel!
 	
+	var firstName: String?
+	var lastName: String?
+	var email: String?
+	var contact: String?
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		var firstName = firstNameLabel
-		var lastName = lastNameLabel
-		var email = emailLabel
-		var contact = contactLabel
+		firstNameLabel.text = firstName
+		lastNameLabel.text = lastName
+		emailLabel.text = email
+		contactLabel.text = contact
         // Do any additional setup after loading the view.
     }
 
