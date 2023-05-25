@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BB303792A1F941500BBBEA9 /* ViewDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB303782A1F941500BBBEA9 /* ViewDetailsVC.swift */; };
 		ACE3C8982A1E516E00C18409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C8972A1E516E00C18409 /* AppDelegate.swift */; };
 		ACE3C89A2A1E516E00C18409 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C8992A1E516E00C18409 /* SceneDelegate.swift */; };
 		ACE3C89C2A1E516E00C18409 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C89B2A1E516E00C18409 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BB303782A1F941500BBBEA9 /* ViewDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDetailsVC.swift; sourceTree = "<group>"; };
 		ACE3C8942A1E516E00C18409 /* EMS_Frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMS_Frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE3C8972A1E516E00C18409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE3C8992A1E516E00C18409 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				ACE3C8A02A1E516E00C18409 /* Assets.xcassets */,
 				ACE3C8A22A1E516E00C18409 /* LaunchScreen.storyboard */,
 				ACE3C8A52A1E516E00C18409 /* Info.plist */,
+				4BB303782A1F941500BBBEA9 /* ViewDetailsVC.swift */,
 			);
 			path = EMS_Frontend;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB303792A1F941500BBBEA9 /* ViewDetailsVC.swift in Sources */,
 				ACE3C89C2A1E516E00C18409 /* ViewController.swift in Sources */,
 				ACE3C8AC2A1F2D3B00C18409 /* EmployeeTableViewController.swift in Sources */,
 				ACE3C8982A1E516E00C18409 /* AppDelegate.swift in Sources */,
