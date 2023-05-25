@@ -12,7 +12,7 @@
 
 import Foundation
 
-// MARK: - EmployeeElement
+// MARK: - Employee
 struct Employee: Codable {
     let id: Int
     let firstName, lastName, email, contactNo: String
