@@ -88,3 +88,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+#Removed tracking for user state data that kept causing merge conflicts
+EMS_Frontend/EMS_Frontend.xcodeproj/project.xcworkspace/xcuserdata/damacm1158.xcuserdatad/UserInterfaceState.xcuserstate
