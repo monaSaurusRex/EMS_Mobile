@@ -63,9 +63,10 @@ extension EmployeeTableViewController:UITableViewDataSource, UITableViewDelegate
         
         if searching{ //while searching employee table view
             return searchingArray.count
-        }else{ //when search is disabled
-            return employeeData.count
         }
+        
+        //when search is disabled
+        return employeeData.count
     }
     
     //function to populate the tableview cells
@@ -87,9 +88,7 @@ extension EmployeeTableViewController:UITableViewDataSource, UITableViewDelegate
     
     //search functionality
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchingArray = employeeData.filter{
-            ($0.firstName.prefix(searchText.count).lowercased().contains(searchText.lowercased())) 
-        }
+        searchingArray = employeeData.filter{ ($0.firstName.prefix(searchText.count).lowercased().contains(searchText.lowercased()))}
         searching = true
         employeeTV.reloadData()
     }
@@ -106,6 +105,22 @@ extension EmployeeTableViewController:UITableViewDataSource, UITableViewDelegate
         
         
         self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    //calling edit for delete
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .delete
+        
+    }
+    
+    //delete function
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        tableView.beginUpdates()
+        employeeData.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
+        
     }
     
 }
