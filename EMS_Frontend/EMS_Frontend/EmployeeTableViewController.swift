@@ -94,4 +94,18 @@ extension EmployeeTableViewController:UITableViewDataSource, UITableViewDelegate
         employeeTV.reloadData()
     }
     
+    //send data to next form
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = self.storyboard?.instantiateViewController(identifier: "ViewDetailsVC") as? ViewDetailsVC
+        
+//        vc?.firstNameLabel.text = employeeData[indexPath.row].firstName
+//        vc?.lastNameLabel.text = employeeData[indexPath.row].lastName
+//        vc?.contactLabel.text = employeeData[indexPath.row].contactNo
+//        vc?.emailLabel.text = employeeData[indexPath.row].email
+        
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
 }
