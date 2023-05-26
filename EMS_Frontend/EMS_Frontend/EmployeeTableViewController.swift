@@ -66,4 +66,46 @@ extension EmployeeTableViewController:UITableViewDataSource, UITableViewDelegate
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .delete
+    }
+
+    //fucntion to delete a row
+    //can edit with and delete with this code by asking for the edit function first,
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //message pop up for the alert message before you delete
+        if editingStyle == .delete{
+            presentDeletionFailsafe(indexPath: indexPath)
+        }
+//this is the actual method for the delete I just addes the self. since it was giving me an error
+//        //begin update/ editing
+//        tableView.beginUpdates()
+//        //removing one row from array, the Int is indexPath
+//        array.remove(at: indexPath.row)
+//        //delete the selected row
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//        //end updates
+//        tableView.endUpdates()
+    }
+    //function for the pop up button
+    func presentDeletionFailsafe(indexPath: IndexPath){
+        let alert = UIAlertController(title: nil, message: "Hey dear are you sure you want to delete!!", preferredStyle: .alert)
+        //yes action declaration
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            
+            //begin update/ editing
+            self.employeeTV.beginUpdates()
+            //removing one row from array, the Int is indexPath
+            self.employeeData.remove(at: indexPath.row)
+            //delete the selected row
+            self.employeeTV.deleteRows(at: [indexPath], with: .fade)
+            //end updates
+            self.employeeTV.endUpdates()
+        }
+        alert.addAction(yesAction)
+        //cancel action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
