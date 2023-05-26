@@ -119,7 +119,7 @@ extension EmployeeTableViewController:UITableViewDataSource, UITableViewDelegate
         if editingStyle == .delete{
             presentDeletionFailsafe(indexPath: indexPath)
         }
-//        
+//
 //        tableView.beginUpdates()
 //        employeeData.remove(at: indexPath.row)
 //        tableView.deleteRows(at: [indexPath], with: .fade)
@@ -141,6 +141,7 @@ extension EmployeeTableViewController:UITableViewDataSource, UITableViewDelegate
             //end updates
             self.employeeTV.endUpdates()
         }
+        yesAction.setValue(UIColor.red, forKey: "titleTextColor")
         alert.addAction(yesAction)
         //cancel action
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
