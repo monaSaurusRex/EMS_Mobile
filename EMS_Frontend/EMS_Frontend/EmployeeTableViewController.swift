@@ -116,11 +116,35 @@ extension EmployeeTableViewController:UITableViewDataSource, UITableViewDelegate
     //delete function
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        tableView.beginUpdates()
-        employeeData.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        tableView.endUpdates()
+        if editingStyle == .delete{
+            presentDeletionFailsafe(indexPath: indexPath)
+        }
+//        
+//        tableView.beginUpdates()
+//        employeeData.remove(at: indexPath.row)
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//        tableView.endUpdates()
         
+    }
+    
+    func presentDeletionFailsafe(indexPath: IndexPath){
+        let alert = UIAlertController(title: nil, message: "Are you sure you want to delete this record?", preferredStyle: .alert)
+        //yes action declaration
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            
+            //begin update/ editing
+            self.employeeTV.beginUpdates()
+            //removing one row from array, the Int is indexPath
+            self.employeeData.remove(at: indexPath.row)
+            //delete the selected row
+            self.employeeTV.deleteRows(at: [indexPath], with: .fade)
+            //end updates
+            self.employeeTV.endUpdates()
+        }
+        alert.addAction(yesAction)
+        //cancel action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
 }
