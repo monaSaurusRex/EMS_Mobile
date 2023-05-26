@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,9 +23,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="View Employee Table"/>
-                                <connections>
-                                    <segue destination="a6U-Iv-bwJ" kind="show" id="8BX-KA-pPE"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaF-af-eEK">
                                 <rect key="frame" x="134.33333333333334" y="153" width="124.66666666666666" height="42.333333333333343"/>
@@ -53,116 +49,12 @@
             </objects>
             <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
         </scene>
-        <!--Employee Table-->
-        <scene sceneID="1GI-CS-2tv">
-            <objects>
-                <viewController storyboardIdentifier="Employee Table" id="a6U-Iv-bwJ" customClass="EmployeeTableViewController" customModule="EMS_Frontend" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0gp-7o-pkh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iKg-Di-RDg">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="a6U-Iv-bwJ" id="lPw-zv-fbY"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GPR-DX-3Gd">
-                                <rect key="frame" x="0.0" y="56" width="393" height="736"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="employee_cell" rowHeight="73" id="S0G-f4-R0X" customClass="EmployeeTableViewCell" customModule="EMS_Frontend" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="73"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S0G-f4-R0X" id="cdI-gS-PUX">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="73"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9CO-CB-BMn">
-                                                    <rect key="frame" x="10" y="4" width="40" height="65.666666666666671"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="CpQ-yd-p1B"/>
-                                                        <constraint firstAttribute="height" constant="40" id="ivl-pI-shF"/>
-                                                    </constraints>
-                                                    <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="default" variableValue="0.80000000000000004"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EmpNum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFH-RD-xrO">
-                                                    <rect key="frame" x="55" y="3" width="328" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LastName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMk-3i-El6">
-                                                    <rect key="frame" x="138" y="49" width="245" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="FirstName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbC-X7-zcq">
-                                                    <rect key="frame" x="55" y="49" width="78" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="rMk-3i-El6" firstAttribute="leading" secondItem="fbC-X7-zcq" secondAttribute="trailing" constant="5" id="8bt-Pl-6iP"/>
-                                                <constraint firstAttribute="trailing" secondItem="mFH-RD-xrO" secondAttribute="trailing" constant="10" id="AnC-e0-3SN"/>
-                                                <constraint firstItem="fbC-X7-zcq" firstAttribute="bottom" secondItem="9CO-CB-BMn" secondAttribute="bottom" id="FA0-At-LCw"/>
-                                                <constraint firstItem="fbC-X7-zcq" firstAttribute="leading" secondItem="9CO-CB-BMn" secondAttribute="trailing" constant="5" id="FES-db-2Rr"/>
-                                                <constraint firstItem="9CO-CB-BMn" firstAttribute="top" secondItem="cdI-gS-PUX" secondAttribute="top" constant="3" id="MTh-Ty-V2X"/>
-                                                <constraint firstItem="mFH-RD-xrO" firstAttribute="top" secondItem="cdI-gS-PUX" secondAttribute="top" constant="3" id="Uqh-Nj-eLa"/>
-                                                <constraint firstItem="mFH-RD-xrO" firstAttribute="leading" secondItem="9CO-CB-BMn" secondAttribute="trailing" constant="5" id="WM9-mc-z5G"/>
-                                                <constraint firstAttribute="bottom" secondItem="9CO-CB-BMn" secondAttribute="bottom" constant="3" id="da0-Jg-Mwg"/>
-                                                <constraint firstItem="rMk-3i-El6" firstAttribute="centerY" secondItem="fbC-X7-zcq" secondAttribute="centerY" id="gk9-mx-WhA"/>
-                                                <constraint firstItem="9CO-CB-BMn" firstAttribute="leading" secondItem="cdI-gS-PUX" secondAttribute="leading" constant="10" id="nVD-3I-q3X"/>
-                                                <constraint firstAttribute="trailing" secondItem="rMk-3i-El6" secondAttribute="trailing" constant="10" id="rbr-bo-dGd"/>
-                                                <constraint firstItem="mFH-RD-xrO" firstAttribute="top" secondItem="9CO-CB-BMn" secondAttribute="top" id="v6N-3A-qCI"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="empFirstName" destination="fbC-X7-zcq" id="BJo-R9-yNj"/>
-                                            <outlet property="empLastName" destination="rMk-3i-El6" id="dMX-h3-USY"/>
-                                            <outlet property="employeeNum" destination="mFH-RD-xrO" id="ciu-0Y-nwQ"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="DBL-5k-x9K"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="DBL-5k-x9K" firstAttribute="trailing" secondItem="GPR-DX-3Gd" secondAttribute="trailing" id="Ccu-Ve-jC8"/>
-                            <constraint firstItem="GPR-DX-3Gd" firstAttribute="top" secondItem="iKg-Di-RDg" secondAttribute="bottom" id="NYn-1T-EgX"/>
-                            <constraint firstAttribute="trailing" secondItem="iKg-Di-RDg" secondAttribute="trailing" id="OaB-S0-X4n"/>
-                            <constraint firstItem="iKg-Di-RDg" firstAttribute="leading" secondItem="DBL-5k-x9K" secondAttribute="leading" id="VAp-wq-TBJ"/>
-                            <constraint firstItem="DBL-5k-x9K" firstAttribute="bottom" secondItem="GPR-DX-3Gd" secondAttribute="bottom" constant="50" id="aYS-rw-4ak"/>
-                            <constraint firstItem="iKg-Di-RDg" firstAttribute="top" secondItem="DBL-5k-x9K" secondAttribute="top" id="bwF-TY-fNf"/>
-                            <constraint firstItem="GPR-DX-3Gd" firstAttribute="leading" secondItem="DBL-5k-x9K" secondAttribute="leading" id="ngv-9b-PVW"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Employee Table" id="wmm-fR-RqV">
-                        <barButtonItem key="rightBarButtonItem" title="add emp" id="kze-ld-4I7">
-                            <connections>
-                                <segue destination="5tu-v5-3Nm" kind="show" id="xoP-z2-wCE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="employeeTV" destination="GPR-DX-3Gd" id="XAl-RW-qvX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aPD-SC-h8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1802.2900763358778" y="-3.5211267605633805"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="Tmd-UE-XHe">
             <objects>
                 <viewController id="5tu-v5-3Nm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0A0-aV-dDY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="First Name:" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dq8-0k-buj">
@@ -170,6 +62,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WRv-JR-Dyi">
@@ -207,9 +100,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Add">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="a6U-Iv-bwJ" kind="show" id="GeT-sT-etv"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VWk-3e-sti"/>
@@ -255,11 +145,7 @@
             <point key="canvasLocation" x="1924" y="-680"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="GeT-sT-etv"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
